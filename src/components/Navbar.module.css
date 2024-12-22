@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  font-weight: 700;
+}
+
+.nav_link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.nav_link:hover {
+  color: #fffffb;
+  transform: scale(1.12);
+}
+
+.nav_active {
+  text-decoration: underline;
+}
+
+.contact_btn {
+  color: #ac335b;
+  background-color: white;
+  padding: 0.4rem 0.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    display: none;
+  }
+}

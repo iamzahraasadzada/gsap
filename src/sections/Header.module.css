@@ -1,0 +1,48 @@
+.header {
+  background-color: transparent;
+  width: 100%;
+  position: fixed;
+  padding: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 50;
+  color: #f9fafb;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scrolled {
+  background-color: rgba(246, 186, 212, 0.5);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+}
+
+.mobile {
+  opacity: 0;
+  position: absolute;
+  transition: all 0.4s ease-in;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 999;
+  color: #f9fafb;
+  font-weight: 700;
+}
+
+.scrolled_clr {
+  color: #ac335b;
+}
+
+@media (max-width: 760px) {
+  .mobile {
+    position: initial;
+    opacity: 1;
+  }
+}
