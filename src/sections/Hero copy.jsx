@@ -8,10 +8,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Hero() {
   const videoRef = useRef();
-  const containerRef = useRef();
+  const contRef = useRef();
 
   useEffect(() => {
-    if (!videoRef.current && !containerRef.current) return;
+    if (!videoRef.current && !contRef.current) return;
+
+    ScrollTrigger.defaults({ lazy: false });
 
     const video = videoRef.current;
 
@@ -20,18 +22,25 @@ function Hero() {
       video.pause();
     };
 
+    document.documentElement.addEventListener("touchstart", playPauseVideo, {
+      once: true,
+    });
+
     video.addEventListener("loadedmetadata", () => {
       gsap.fromTo(
         video,
         { currentTime: 0 },
         {
           currentTime: video.duration || 1,
+          duration: video.duration,
           ease: "none",
           scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
+            trigger: contRef.current,
+            scrub: 1,
+            pin: contRef.current,
+            start: "top 100%",
             end: "bottom bottom",
-            scrub: true,
+            pinSpacing: false,
           },
         }
       );
@@ -41,7 +50,7 @@ function Hero() {
   return (
     <Element name="hero">
       <div className={styles.hero}>
-        <div ref={containerRef} className={styles.video_container}>
+        <div className={styles.video_container}>
           <video
             ref={videoRef}
             src="video.mp4"
@@ -54,6 +63,7 @@ function Hero() {
             <span>organic</span>
             <p>The prefect watermelon juice</p>
           </div>
+          <div ref={contRef} className={styles.cover} />
         </div>
       </div>
     </Element>

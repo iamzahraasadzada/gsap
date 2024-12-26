@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
 .hero {
   width: 100%;
+  position: relative;
+  z-index: 5;
 }
 
 .video_container {
   width: 100%;
-  position: relative;
+  height: 500dvh;
+}
+
+.video_container video {
+  width: 100%;
+  height: 100dvh;
+  object-fit: cover;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 .hero_text {
@@ -37,38 +49,4 @@
   -webkit-text-stroke: 0.5px white;
   color: transparent;
   font-size: 7rem;
-}
-
-.cover {
-  width: 100%;
-
-  height: 50vh;
-  position: relative;
-  top: -80% !important;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
-
-video {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  z-index: 2;
-  position: sticky;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
-.section {
-  position: relative;
-  background-color: green;
-  width: 100%;
-  height: 100vh;
-  z-index: 4;
-}
-
-.can .pin-spacer {
-  display: none !important;
 }
