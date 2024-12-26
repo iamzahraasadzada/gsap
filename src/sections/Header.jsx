@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Logo from "../components/Logo";
-import Navbar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import styles from "./Header.module.css";
 import { IoMdMenu } from "react-icons/io";
 import MobileMenu from "../components/MobileMenu";
